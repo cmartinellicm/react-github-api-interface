@@ -12,21 +12,21 @@ export default function Profile() {
                 <Stack spacing={2}>
                     <h1>{githubState.user.name}</h1>
                     <Stack direction='row' spacing={1}>
-                        <h3>Username:</h3>
+                        <h4>Username:</h4>
                         <Link href={githubState.user.html_url} target='_blank' rel='noreferrer'>
                             {githubState.user.login}
                         </Link>
                     </Stack>
                     <Stack direction='row' spacing={1}>
-                        <h3>Company:</h3>
+                        <h4>Company:</h4>
                         <span>{githubState.user.company}</span>
                     </Stack>
                     <Stack direction='row' spacing={1}>
-                        <h3>Location:</h3>
+                        <h4>Location:</h4>
                         <span>{githubState.user.location}</span>
                     </Stack>
                     <Stack direction='row' spacing={1}>
-                        <h3>Blog:</h3>
+                        <h4>Blog:</h4>
                         <Link href={githubState.user.blog} target='_blank' rel='noreferrer'>
                             {githubState.user.blog}
                         </Link>
