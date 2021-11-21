@@ -14,13 +14,13 @@ export default function Header() {
         <header>
             <Stack spacing={2} direction='row'>
                 <TextField
-                    label='Digite o username'
+                    label='Type username'
                     variant='outlined'
                     size='small'
                     onChange={(event) => setUsernameForSearch(event.target.value)}
                 />
                 <Button variant='outlined' size='small' type='sumbit' onClick={submitGetUser}>
-                    Pesquisar
+                    Search
                 </Button>
             </Stack>
         </header>
