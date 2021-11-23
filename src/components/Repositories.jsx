@@ -5,8 +5,8 @@ import RepositoryItem from './RepositoryItem';
 
 export default function Repositories() {
     const { githubState, getUserRepos, getUserStarred } = useContext(GithubContext);
-    const [showRepositories, setShowRepositories] = useState();
-    const [showStarred, setShowStarred] = useState();
+    const [showRepositories, setShowRepositories] = useState(false);
+    const [showStarred, setShowStarred] = useState(false);
 
     useEffect(() => {
         if (githubState.user.login) {
