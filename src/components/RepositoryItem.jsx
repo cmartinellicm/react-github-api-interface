@@ -1,8 +1,8 @@
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@mui/material';
+import { Box, Card, CardActions, CardContent, Button, Typography, Grid } from '@mui/material';
 
 export default function RepositoryItem({ name, fullName, description, linkToRepo }) {
     return (
-        <Box sx={{ minWidth: 275 }}>
+        <Grid item xs={12} sm={6} md={3}>
             <Card variant='outlined'>
                 <CardContent>
                     <Typography variant='h5' component='div'>
@@ -18,6 +18,6 @@ export default function RepositoryItem({ name, fullName, description, linkToRepo
                     </Button>
                 </CardActions>
             </Card>
-        </Box>
+        </Grid>
     );
 }

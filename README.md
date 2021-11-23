@@ -10,6 +10,10 @@ User types username in the input field.
 
 Application fetches user data from GitHub public API and shows it on screen.
 
+Repositories button shows user's GitHub repositories.
+
+Starred button shows user's GitHub starred repositories.
+
 ### Features 
 
 - Used Context Hook to access data from GitHub API across any section of the application.

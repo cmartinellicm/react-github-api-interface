@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { GithubContext } from '../providers/github-provider';
-import { Button, Stack } from '@mui/material';
+import { Button, Stack, Grid } from '@mui/material';
 import RepositoryItem from './RepositoryItem';
 
 export default function Repositories() {
@@ -16,10 +16,12 @@ export default function Repositories() {
     }, [githubState.user.login]);
 
     const submitGetRepositories = () => {
+        setShowStarred(false);
         setShowRepositories(true);
     };
 
     const submitGetStarred = () => {
+        setShowRepositories(false);
         setShowStarred(true);
     };
 
@@ -36,27 +38,31 @@ export default function Repositories() {
                         </Button>
                     </Stack>
 
-                    {showRepositories &&
-                        githubState.repositories.map((item) => (
-                            <RepositoryItem
-                                key={item.id}
-                                name={item.name}
-                                fullName={item.full_name}
-                                description={item.description}
-                                linkToRepo={item.html_url}
-                            />
-                        ))}
+                    <Grid container spacing={2} mt={2}>
+                        {showRepositories &&
+                            githubState.repositories.map((item) => (
+                                <RepositoryItem
+                                    key={item.id}
+                                    name={item.name}
+                                    fullName={item.full_name}
+                                    description={item.description}
+                                    linkToRepo={item.html_url}
+                                />
+                            ))}
+                    </Grid>
 
-                    {showStarred &&
-                        githubState.starred.map((item) => (
-                            <RepositoryItem
-                                key={item.id}
-                                name={item.name}
-                                fullName={item.full_name}
-                                description={item.description}
-                                linkToRepo={item.html_url}
-                            />
-                        ))}
+                    <Grid container spacing={2} mt={2}>
+                        {showStarred &&
+                            githubState.starred.map((item) => (
+                                <RepositoryItem
+                                    key={item.id}
+                                    name={item.name}
+                                    fullName={item.full_name}
+                                    description={item.description}
+                                    linkToRepo={item.html_url}
+                                />
+                            ))}
+                    </Grid>
                 </>
             )}
         </section>
